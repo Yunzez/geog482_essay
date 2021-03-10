@@ -44,7 +44,7 @@ This project is a massive and complicated project, at least for me. The core fun
 - function ut, it sets the basic style for the map, the styles for map are also functions prewritten, it also decides whether or not the user is using a mobile device as to determine the style
 - function M, the section init step, checking the previous steps and setting up tabs for the application, and also other interactions of the websites like popup.
 - function U, it decides where tab to show for the application, the default is zero, but when the user chooses another index(tab number), the function will be recalled.
-- function q, this function builds up the application
+- function q, this function builds up the application <br/>
 Due to the complexity of the project, the major functions mentioned above are the function that initialize, combine, or finalize the production of crucial parts of the application; however, they only connect, combine, or communicate between other functions and data, most of the important functions and features are pre written prior to those functions, for example, the UI of the application and widgets setup. Hence, the functions mentioned above are the functions that are called the most when users interact with the map as major functions, but the major functions for setting up the map applications are different. 
 
 
