@@ -1,7 +1,7 @@
 # Geog458 final essay
 
 ### introduction<br/>
-   the project I will be analyzing on is [Washington state emergency operations Center Dashboard](https://waseocgis.maps.arcgis.com/apps/MapSeries/index.html?appid=84b17c2a2af8487f97a244b6126834c2). I came across this project when I am looking for data for my final project and it is large and complicated. I think it would be meaningful and interesting to analyze this project. 
+   the project I will be analyzing on is [Washington state emergency operations Center Dashboard](https://waseocgis.maps.arcgis.com/apps/MapSeries/index.html?appid=84b17c2a2af8487f97a244b6126834c2). I came across this project when I am looking for data for my final project and it is large and complicated. I think it would be meaningful and interesting to analyze this project. Since it is an official government project and it is constantly providing crucial and important information to WA citizens and other people all around the world. 
    The goal of this project is to provide WA residents or whoever stays in WA state with helpful information about emergencies or daily information like weather or condition of a road. As mentioned earlier, it is a complicated portal and it serves a lot of functions. It has several large sections: 
    - wildfire -include wind and wildfire information and alerts
    - WebEOC Shelters -shows the location of statewild shelters
@@ -15,9 +15,9 @@
    - Weather outlooks -shows the weather of all counties in WA
    - One Stop Shop Traffic -retrieve CCTV data of the road and show detailed information of each segment of road
 
-The map elements that the project employs are scalar bar (only in one stop shop traffic section), legend, and title.
+The basic map elements that the project employs are scalar bar (only in one stop shop traffic section), legend, and title.
 Based on the section it has, this project is suitable for all the people in the world as part of its section provides data of the world, especially on the air quality and covid trackers. For the author of the project, it would be the government of Washington state since it is a government project. However, each subsection has different authors and they belong to different organizations as the dashboard employs their work and combines them to create this dashboard. For example, the covid dashboard that the website employed is made by John Hopskin University.
-For this dashboard project, they update their most of data everyday and through different approaches. However, in the english proficiency section, their data is collected at 10.30.2019, Lewis Lujian is the author.
+For this dashboard project, they update their most of data everyday and through different approaches. However, in the english proficiency section, their data source is well cited, data is presented at 10.30.2019, Lewis Lujian is the author.
 
 data source:
 - wildfire: WA State Parks GIS
@@ -36,6 +36,16 @@ For the data source, most sections use data from different data source besides t
 
 ----------
 ### systematic architecture:
+The emergency operations center dashboard prints out the steps of loading on console, which is helpful for me to analyze how the application works.
+The database will offer data that will compose the thematic layer. This project uses ArcGIS as the geospatial server that provides basic elements for the maps like various basemaps. And through the web server, the application is rendered for web clients. 
+Before the user starts the map, the UI is already loaded, so it can be fast to generate the widget such as search bar, zoomslider, and home button. All the pages are loaded by adding data points and creating widgets afterwards. In the inspection console, they also provide the time of the total time consumption for configurations, map loading, and widget loading time. When the data point is loaded, the popup window is coded in, when the user clicks on the data point of the polygon, there is no more processing in the server. That gives a fast response time for the popup window to show up, but it also slows down the map loading process when there is a large amount of data.
+This project is a massive and complicated project, at least for me. The core functions of the project in the code should be 
+- function o, the init function, the first function that initializes the map, it composes the proxyurl, sharing url, username, password, and oAuthAppId for user, it also initializes the UI of the map.
+- function ut, it sets the basic style for the map, the styles for map are also functions prewritten, it also decides whether or not the user is using a mobile device as to determine the style
+- function M, the section init step, checking the previous steps and setting up tabs for the application, and also other interactions of the websites like popup.
+- function U, it decides where tab to show for the application, the default is zero, but when the user chooses another index(tab number), the function will be recalled.
+- function q, this function builds up the application
+
 
 
 
@@ -50,11 +60,12 @@ on the responsive design point of view, that is, whether it can function properl
 
 ------
 ### pros and cons of the examined project
-I think they did a good job on trying to make the website simple and fast to use. Since they have quite a few sections with large dataset, it has a comparatively user friendly loading time, for individual pages too. The website is divided into tabs and each tab contains different maps, which is simple and easy to understand. However, when I first entered the website, I didn't notice the tab on top of the website for a while simply because the content on the first map was already overwhelming. So I think they can add an introduction page (maybe a sidebar panel) where users will first enter, this page can inform the users the basic purpose of the project and the usage of the website. 
-Another thing to mention is that even though all sections show information clearly and well, it is quite obvious they have different styles, especially the background color of the sections, some of them are white and others are white or light color. The audience may first notice the change of color instead of the data, so the variations of the background color can be seen as a distracting factor for users. It would be an improvement if the project team could match the background color for all sections. 
-What's more, some sections in the project include data that covers all around the world while others only cover Washington State. So adding a switch for the audience to switch data between only Washington State and the globe will be a good improvement since it speeds up the loading process. 
-Beyond that, the project can also offer the audience the link of the section on the page of each section, for example, the John Hopkins Covid dashboard. It gives users options to only focus on the section they are interested in instead of going on this all-in-one project.
-Besides all above, something worth to notice is that the website has another function that seems to be not opened. There is a line of words on the top right says "open common operating picture dashboard" but it does not offer a link for users to go to. After looking up, I realized the [regional common operating picture dashboard](https://risp-cusec.opendata.arcgis.com/datasets/68b0b267a23c4210af94f262880b2800) is a more generalized emergency dashboard for anyone who's in need. But it would be a great improvement if the website can put the link on the top right. 
+I think they did a good job on trying to make the website simple and fast to use. Since they have quite a few sections with large dataset, it has a comparatively user friendly loading time, for individual pages too. The website is divided into tabs and each tab contains different maps, which is simple and easy to understand. However, when I first entered the website, I didn't notice the tab on top of the website for a while simply because the content on the first map was already overwhelming. So I think they can add an introduction page (maybe a sidebar panel) where users will first enter, this page can inform the users the basic purpose of the project and the usage of the website. <br/>
+Another thing to mention is that even though all sections show information clearly and well, it is quite obvious they have different styles, especially the background color of the sections, some of them are white and others are white or light color. The audience may first notice the change of color instead of the data, so the variations of the background color can be seen as a distracting factor for users. It would be an improvement if the project team could match the background color for all sections.<br/> 
+What's more, some sections in the project include data that covers all around the world while others only cover Washington State. So adding a switch for the audience to switch data between only Washington State and the globe will be a good improvement since it speeds up the loading process. <br/>
+Beyond that, the project can also offer the audience the link of the section on the page of each section, for example, the John Hopkins Covid dashboard. It gives users options to only focus on the section they are interested in instead of going on this all-in-one project.<br/>
+Besides all above, something worth to notice is that the website has another function that seems to be not opened. There is a line of words on the top right that says "open common operating picture dashboard" but it does not offer a link for users to go to. After looking up, I realized the [regional common operating picture dashboard](https://risp-cusec.opendata.arcgis.com/datasets/68b0b267a23c4210af94f262880b2800) is a more generalized emergency dashboard for anyone who's in need. But it would be a great improvement if the website can put the link on the top right. <br/>
+
 
 
 
