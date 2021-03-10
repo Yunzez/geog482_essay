@@ -35,7 +35,7 @@ For the data source, most sections use data from different data source besides t
 
 
 ----------
-### systematic architecture:
+### Systematic architecture:
 The emergency operations center dashboard prints out the steps of loading on console, which is helpful for me to analyze how the application works.
 The database will offer data that will compose the thematic layer. This project uses ArcGIS as the geospatial server that provides basic elements for the maps like various basemaps. And through the web server, the application is rendered for web clients.
 Before the user starts the map, the UI is already loaded, so it can be fast to generate the widget such as search bar, zoomslider, and home button. All the pages are loaded by adding data points and creating widgets afterwards. In the inspection console, they also provide the time of the total time consumption for configurations, map loading, and widget loading time. When the data point is loaded, the popup window is coded in, when the user clicks on the data point of the polygon, there is no more processing in the server. That gives a fast response time for the popup window to show up, but it also slows down the map loading process when there is a large amount of data.
@@ -45,19 +45,19 @@ This project is a massive and complicated project, at least for me. The core fun
 - function M, the section init step, checking the previous steps and setting up tabs for the application, and also other interactions of the websites like popup.
 - function U, it decides where tab to show for the application, the default is zero, but when the user chooses another index(tab number), the function will be recalled.
 - function q, this function builds up the application
-Due to the complexity of the project, the major functions mentioned above are the function that initialize, combine, or finalize the production of crucial parts of the application; however, they only connect, combine, or communicate between other functions and data, most of the important functions and features are prewritten prior to those functions, for example, the UI of the application and widgets setup. Hence, the functions mentioned above are the functions that is called the most when user interact with the map as major functions, but the major functions for setting up the map applications are different. 
+Due to the complexity of the project, the major functions mentioned above are the function that initialize, combine, or finalize the production of crucial parts of the application; however, they only connect, combine, or communicate between other functions and data, most of the important functions and features are pre written prior to those functions, for example, the UI of the application and widgets setup. Hence, the functions mentioned above are the functions that are called the most when users interact with the map as major functions, but the major functions for setting up the map applications are different. 
 
 
 ---------
 
-### critique on its overall UI/UX and Web Mapping design.
+### Critique on its overall UI/UX and Web Mapping design.
 All the subsections support all the basemaps that are supported by ESRI, there are around 27 basemaps the user can choose from. The regions and points, basically everything on the thematic layers on the maps are interactive, they will show a pop up window when it is clicked, which informs the user the location of the data point of the polygon, and the detail data of the area. The way of presenting the data is similar from maps to maps, they are all in vertical view. However, due to the complexity of the datasets and variations of the maps content, the data showed in the pop up window, even though detailed, are not informative enough on my perspective.<br/>
 For thematic layers, each subsection has its own thematic layers, some has more than one, for example, the Air quality dashboard contains several thematic layers that gives users information about air quality in the future (24 hours, 48 hours).<br/>
 on the responsive design point of view, that is, whether it can function properly across multiple devices and screen sizes, the project does a good job on changing the ways of interacting for mobile devices and computers, for computers interface, it has tabs on the top while when users are using mobile devices, the tabs turned into sliding tab at the bottom, which is quite user friendly. However, the way the website decides to use computer interface or mobile interface can be improved. When I reduced my screen size of the website to half of my computer screen, it automatically turned into the mobile device interface without instructions on how to use it (the sliding tab in the bottom does not make sense to me at first). That also leads to another problem that users on mobile devices may have hard time knowing when will be their focused page on the screen since the sliding tab does not tell the user what pages this website includes. <br/>
 
 
 ------
-### pros and cons of the examined project
+### Pros and cons of the examined project
 I think they did a good job on trying to make the website simple and fast to use. Since they have quite a few sections with large dataset, it has a comparatively user friendly loading time, for individual pages too. The website is divided into tabs and each tab contains different maps, which is simple and easy to understand. However, when I first entered the website, I didn't notice the tab on top of the website for a while simply because the content on the first map was already overwhelming. So I think they can add an introduction page (maybe a sidebar panel) where users will first enter, this page can inform the users the basic purpose of the project and the usage of the website. <br/>
 Another thing to mention is that even though all sections show information clearly and well, it is quite obvious they have different styles, especially the background color of the sections, some of them are white and others are white or light color. The audience may first notice the change of color instead of the data, so the variations of the background color can be seen as a distracting factor for users. It would be an improvement if the project team could match the background color for all sections.<br/> 
 What's more, some sections in the project include data that covers all around the world while others only cover Washington State. So adding a switch for the audience to switch data between only Washington State and the globe will be a good improvement since it speeds up the loading process. <br/>
@@ -66,9 +66,11 @@ Besides all above, something worth to notice is that the website has another fun
 
 
 -------
-### reflection
+### Reflection
 
-In this project, I truly see how the power of tecnology can bring peole welfare and security when they are properly employed. I'm surprised to see a project like this at first because the information on each subsections are quite different and it is not quite reasonable to put all of them together on the first glimpse, but soon I realized they all serve the same purpose, taht is to inform people or the emergencies surrounded. It also reminds me of digital divide, or what I call technology discriminaiton, some people just don't have access to the websites so they do not benefits from this projects. I can see from the codes that the project team tried their best to improve their loading and processing speed with responsiable design for different devices to make their projects widely accessible. Even though the project has done a lot for getting over the digital divide, there are still more things to be done in the future. On my own project for this class, I was wanting to create a dashboard like this but due to technical difficulties, 
+In this project, I truly see how the power of technology can bring people welfare and security when they are properly employed. I'm surprised to see a project like this at first because the information on each subsection is quite different and it is not quite reasonable to put all of them together on the first glimpse, but soon I realized they all serve the same purpose, that is to inform people or the emergencies surrounded. It also reminds me of digital divide, or what I call technology discriminaiton, some people just don't have access to websites so they do not benefit from these projects. I can see from the codes that the project team tried their best to improve their loading and processing speed with responsible design for different devices to make their projects widely accessible. Even though the project has done a lot for getting over the digital divide, there are still more things to be done in the future. On my own project for this class, I was wanting to create a dashboard like this but due to technical difficulties, it did  not come true. But this project did give me a lot of inspirations of how a project like this can be done. I appreciate their work and genuinely hope they will keep the app improving and being helpful to people around the globe.
+
+
 
 
 
