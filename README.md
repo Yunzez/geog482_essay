@@ -1,6 +1,6 @@
 # Geog458 final essay
 
-### introduction<br/>
+### Introduction<br/>
    the project I will be analyzing on is [Washington state emergency operations Center Dashboard](https://waseocgis.maps.arcgis.com/apps/MapSeries/index.html?appid=84b17c2a2af8487f97a244b6126834c2). I came across this project when I am looking for data for my final project and it is large and complicated. I think it would be meaningful and interesting to analyze this project. Since it is an official government project and it is constantly providing crucial and important information to WA citizens and other people all around the world. 
    The goal of this project is to provide WA residents or whoever stays in WA state with helpful information about emergencies or daily information like weather or condition of a road. As mentioned earlier, it is a complicated portal and it serves a lot of functions. It has several large sections: 
    - wildfire -include wind and wildfire information and alerts
@@ -37,7 +37,7 @@ For the data source, most sections use data from different data source besides t
 ----------
 ### systematic architecture:
 The emergency operations center dashboard prints out the steps of loading on console, which is helpful for me to analyze how the application works.
-The database will offer data that will compose the thematic layer. This project uses ArcGIS as the geospatial server that provides basic elements for the maps like various basemaps. And through the web server, the application is rendered for web clients. 
+The database will offer data that will compose the thematic layer. This project uses ArcGIS as the geospatial server that provides basic elements for the maps like various basemaps. And through the web server, the application is rendered for web clients.
 Before the user starts the map, the UI is already loaded, so it can be fast to generate the widget such as search bar, zoomslider, and home button. All the pages are loaded by adding data points and creating widgets afterwards. In the inspection console, they also provide the time of the total time consumption for configurations, map loading, and widget loading time. When the data point is loaded, the popup window is coded in, when the user clicks on the data point of the polygon, there is no more processing in the server. That gives a fast response time for the popup window to show up, but it also slows down the map loading process when there is a large amount of data.
 This project is a massive and complicated project, at least for me. The core functions of the project in the code should be 
 - function o, the init function, the first function that initializes the map, it composes the proxyurl, sharing url, username, password, and oAuthAppId for user, it also initializes the UI of the map.
@@ -45,9 +45,7 @@ This project is a massive and complicated project, at least for me. The core fun
 - function M, the section init step, checking the previous steps and setting up tabs for the application, and also other interactions of the websites like popup.
 - function U, it decides where tab to show for the application, the default is zero, but when the user chooses another index(tab number), the function will be recalled.
 - function q, this function builds up the application
-
-
-
+Due to the complexity of the project, the major functions mentioned above are the function that initialize, combine, or finalize the production of crucial parts of the application; however, they only connect, combine, or communicate between other functions and data, most of the important functions and features are prewritten prior to those functions, for example, the UI of the application and widgets setup. Hence, the functions mentioned above are the functions that is called the most when user interact with the map as major functions, but the major functions for setting up the map applications are different. 
 
 
 ---------
@@ -67,6 +65,10 @@ Beyond that, the project can also offer the audience the link of the section on 
 Besides all above, something worth to notice is that the website has another function that seems to be not opened. There is a line of words on the top right that says "open common operating picture dashboard" but it does not offer a link for users to go to. After looking up, I realized the [regional common operating picture dashboard](https://risp-cusec.opendata.arcgis.com/datasets/68b0b267a23c4210af94f262880b2800) is a more generalized emergency dashboard for anyone who's in need. But it would be a great improvement if the website can put the link on the top right. <br/>
 
 
+-------
+### reflection
+
+In this project, I truly see how the power of tecnology can bring peole welfare and security when they are properly employed. I'm surprised to see a project like this at first because the information on each subsections are quite different and it is not quite reasonable to put all of them together on the first glimpse, but soon I realized they all serve the same purpose, taht is to inform people or the emergencies surrounded. It also reminds me of digital divide, or what I call technology discriminaiton, some people just don't have access to the websites so they do not benefits from this projects. I can see from the codes that the project team tried their best to improve their loading and processing speed with responsiable design for different devices to make their projects widely accessible. Even though the project has done a lot for getting over the digital divide, there are still more things to be done in the future. On my own project for this class, I was wanting to create a dashboard like this but due to technical difficulties, 
 
 
 
